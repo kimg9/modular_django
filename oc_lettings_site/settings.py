@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+import sentry_sdk
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -117,3 +119,9 @@ STATICFILES_DIRS = [BASE_DIR / "static", ]
 
 ERROR_404_TEMPLATE_NAME = '404.html'
 ERROR_500_TEMPLATE_NAME = '500.html'
+
+
+sentry_sdk.init(
+    dsn=os.environ["SENTRY_DNS"],
+    send_default_pii=True,
+)
