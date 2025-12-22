@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get("DEBUG", 0))
 
 ALLOWED_HOSTS = ["*"]
 
@@ -120,8 +120,8 @@ STATICFILES_DIRS = [BASE_DIR / "static", ]
 ERROR_404_TEMPLATE_NAME = '404.html'
 ERROR_500_TEMPLATE_NAME = '500.html'
 
-
-sentry_sdk.init(
-    dsn=os.environ["SENTRY_DNS"],
-    send_default_pii=True,
-)
+if not DEBUG:
+    sentry_sdk.init(
+        dsn=os.environ.get("SENTRY_DNS"),
+        send_default_pii=True,
+    )
