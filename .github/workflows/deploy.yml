@@ -40,9 +40,15 @@ jobs:
       - name: Run Tests
         run: pytest .
 
+  check-build:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Tous les tests sont passés."
+
   deploy:
     name: Deploy
-    needs: build
+    needs: check-build
     runs-on: ubuntu-latest
     environment: production
 
