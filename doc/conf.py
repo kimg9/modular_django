@@ -25,7 +25,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 import os
 import sys
+
 import django
+
 
 # -- Configuration du chemin vers le code source ---------------------------
 # On remonte d'un niveau pour atteindre la racine du projet Django
