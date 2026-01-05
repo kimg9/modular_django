@@ -7,6 +7,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 
+import django
+import sys
+import os
 project = 'django_oc_lettings'
 copyright = '2026, Kim Gemo, OpenClassrooms, Guy King, Colin Meldrum, Ranga Gonnage'
 author = 'Kim Gemo, OpenClassrooms, Guy King, Colin Meldrum, Ranga Gonnage'
@@ -23,10 +26,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Automatic génération of models docs ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-import os
-import sys
-
-import django
 
 
 # -- Configuration du chemin vers le code source ---------------------------
@@ -53,4 +52,3 @@ extensions = [
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-
