@@ -93,7 +93,7 @@ jobs:
       - name: Fill in the new ID in the Amazon ECS task definition
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: task-definition.json
+          task-definition: .aws/task-definition.json
           container-name: oc-lettings_django_container
           image: ${{ steps.build-image.outputs.image }}
           environment-variables: |
