@@ -139,3 +139,6 @@ if AWS_STORAGE_BUCKET_NAME:
     # Stockage des fichiers statiques
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"  # noqa: E231
+
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
