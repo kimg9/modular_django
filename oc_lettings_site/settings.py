@@ -125,3 +125,17 @@ if not DEBUG:
         dsn=os.environ.get("SENTRY_DNS"),
         send_default_pii=True,
     )
+
+
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+if AWS_STORAGE_BUCKET_NAME:
+    INSTALLED_APPS += ['storages']
+
+    # Configuration S3
+    AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME', 'eu-west-3')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Stockage des fichiers statiques
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"  # noqa: E231
