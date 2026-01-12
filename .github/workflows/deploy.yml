@@ -38,6 +38,8 @@ jobs:
           python -m pip install --upgrade pip
             pip install -r requirements.txt
       - name: Collect Static Files
+        env:
+          AWS_STORAGE_BUCKET_NAME: ${{ secrets.AWS_STORAGE_BUCKET_NAME }}
         run: |
             python manage.py collectstatic --noinput
       - name: Run isort
