@@ -1,6 +1,6 @@
-.. Documentation du Projet Rental App documentation master file.
+.. Documentation du Projet Holidays Home documentation master file.
 
-Bienvenue dans la documentation technique de Rental App
+Bienvenue dans la documentation technique Holidays Home
 =======================================================
 
 Cette documentation détaille les aspects techniques de l'application Django 

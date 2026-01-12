@@ -4,10 +4,10 @@ from django.db import models
 
 class Profile(models.Model):
     """
-    Model representing a user profile.
+    Model representing a profile.
 
-    @cvar user: One-to-one relationship with Django User model
-    @cvar favorite_city: Optional favorite city of the user (max 64 chars)
+    :ivar user: One-to-one relationship with Django User model
+    :ivar favorite_city: Optional favorite city of the user (max 64 chars)
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     favorite_city = models.CharField(max_length=64, blank=True)

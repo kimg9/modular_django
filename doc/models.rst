@@ -3,10 +3,10 @@ Détails techniques des modèles
 
 .. automodule:: profiles.models
    :members:
-   :undoc-members:
+   :exclude-members: DoesNotExist, MultipleObjectsReturned
    :show-inheritance:
 
 .. automodule:: lettings.models
    :members:
-   :undoc-members:
+   :exclude-members: DoesNotExist, MultipleObjectsReturned
    :show-inheritance:

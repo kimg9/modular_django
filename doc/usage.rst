@@ -10,4 +10,4 @@ Cas d'utilisation 1 : Consulter un bien
 Cas d'utilisation 2 : Rechercher un profil
 ------------------------------------------
 1. L'utilisateur clique sur "Profiles".
-2. Sélectionne un utilisateur pour voir sa ville favorite.
+2. Sélectionne un profil pour voir ses contacts et sa ville favorite.
